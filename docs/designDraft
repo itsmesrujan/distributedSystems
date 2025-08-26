@@ -1,0 +1,68 @@
+Design of a storage system:
+
+1. Clarifications:
+
+> Scope: Let us say, we are designing this system for limited users like 1 to 1000 members.
+
+> Constraints: [self- evaluation]
+
+1. As of now users are limited and there is a concern with future scaling. We just can't predict now as overall project requirement is not finalized.
+
+2. Architectural finalization, as per the current requirement we should go with monolith architecture but when we target for larger audience, we may need to shift it to micro services architecture.
+
+3. Un-availability of front-end system
+
+4. As of now, due to requirement, we are going a head with vertical scaling rather than horizontal scaling.
+
+5. Eviction policy would be randomly picked rather than going a head with based on the business need(which is not finalized yet).
+
+6. <we will update the list if anything strikes in between>
+
+> Success Criteria: If the designed system is capable enough to store user's/client's data in the backend system, then we can say that success criteria is met.
+
+Note: But for future use case the system should be capable of serving larger traffic and we may need to scale it in such a way that it supports all types of eviction policies based on user/client sorting.
+
+
+
+2. FR & NFR
+
+Functional Requirements
+
+1. User information should be saved in the backend storage system based on user actions in the front-end system, for instance: sign-up.
+Note: For the current system, we will use a console based application to save the user information.
+
+2. Retrieve the user information from the backend storage systems.
+
+3. Update the user/client information to backend storage system.
+
+4. Capability to delete the user/client information from the backend-storage system and implement the retain policy of the deleted data in the back-end.
+
+
+Non-Functional Requirements
+
+1. Availability
+2. Latency (there will be slight delay if we concentrate on availability)
+3. Performant
+
+Biggest Technical Challenge
+
+1. Setting up a wide range of servers in my local machine and configuring the same.
+2. Identify the right database for maintaining the user/client information. For now we are going a head with SQL database, but in future we may need to consider NOSQL database(s) to scale it horizontally.
+3. Identify & set up the build infrastructure, e.g kubernates e.t.c
+[TODO] List it here if any
+
+
+3. Estimate Scale & Plan capacity
+
+Traffic
+
+
+
+Storage Needs
+
+
+
+Throughput & Database needs
+
+
+
